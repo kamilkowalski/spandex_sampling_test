@@ -22,7 +22,7 @@ docker compose up -d
 mix deps.get
 
 # Setup the database
-mix doecto.create && mix ecto.migrate
+mix ecto.create && mix ecto.migrate
 
 # Run the app
 mix phx.server
