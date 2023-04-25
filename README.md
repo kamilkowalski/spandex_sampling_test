@@ -43,6 +43,10 @@ mix phx.server
 
 ## Results
 
-Here's a screenshot of a simple test - generating 10 requests with both a 1.0 and 0.5 sample rate at 10:11pm and 10:13pm respectively as seen in the [Traces page in Datadog's APM](https://app.datadoghq.com/apm/traces).
+Here's a screenshot of a simple test - generating 10 requests with both a 1.0 and 0.5 sample rate at 10:11pm and 10:13pm respectively as seen in the [Traces page in Datadog's APM](https://app.datadoghq.com/apm/traces). It seems the traces are being sampled correctly.
 
 ![results](results.png)
+
+On the other hand, here's the screenshot of the [Ingestion Control](https://app.datadoghq.com/apm/traces/ingestion-control) page for another service, tested with 50% sampling rate. It still reports 100% ingestion rate, with the `auto` reason specified. That might be due to the library being unofficial, or some metadata still missing.
+
+![results](sample_rate.png)
