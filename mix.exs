@@ -49,7 +49,16 @@ defmodule SpandexTest.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:spandex,
+       github: "TheRealReal/spandex", branch: "distributed-sampling-priority", override: true},
+      {:spandex_datadog,
+       github: "TheRealReal/spandex_datadog",
+       branch: "distributed-sampling-priority",
+       override: true},
+      {:spandex_phoenix, "~> 1.1"},
+      {:spandex_ecto, "~> 0.7.0"},
+      {:httpoison, "~> 2.0"}
     ]
   end
 

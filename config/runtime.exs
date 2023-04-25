@@ -20,6 +20,12 @@ if System.get_env("PHX_SERVER") do
   config :spandex_test, SpandexTestWeb.Endpoint, server: true
 end
 
+config :spandex_test, SpandexTestTracer,
+  service: :spandex_test,
+  adapter: SpandexDatadog.Adapter,
+  disabled?: false,
+  env: "#{System.get_env("USER")}-local"
+
 if config_env() == :prod do
   database_url =
     System.get_env("DATABASE_URL") ||
